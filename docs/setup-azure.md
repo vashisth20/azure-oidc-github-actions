@@ -32,7 +32,9 @@ az ad app federated-credential create \
 > The subject field can be customized based on your workflow. For example:
 >
 > For workflows triggered by pull requests: repo:<OWNER>/<REPO>:pull-request
+>
 > For jobs tied to an environment: repo:<OWNER>/<REPO>:environment:<NAME>
+>
 > For branch-specific workflows: repo:<OWNER>/<REPO>:ref:<REF_PATH>
 
 
