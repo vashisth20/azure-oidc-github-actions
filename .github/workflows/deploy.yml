@@ -1,0 +1,40 @@
+name: Deploy to Azure using OIDC
+
+on:
+  push:
+    branches:
+      - main
+
+permissions:
+  id-token: write
+  contents: read
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    # Checkout the repository
+    - name: Checkout repository
+      uses: actions/checkout@v3
+
+    # Log in to Azure using OIDC
+    - name: Azure Login
+      uses: azure/login@v1
+      with:
+        client-id: ${{ secrets.AZURE_CLIENT_ID }}
+        tenant-id: ${{ secrets.AZURE_TENANT_ID }}
+        subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
+
+    # Deploy the Bicep file
+    - name: Deploy Bicep file
+      run: |
+        az deployment group create \
+          --resource-group ${{ secrets.AZURE_RESOURCE_GROUP }} \
+          --template-file examples/basic-deploy/main.bicep
+
+    # Clean up resources (optional)
+    # Uncomment the following step if you want to clean up resources after deployment
+    # - name: Clean up resources
+    #   run: |
+    #     az group delete --name ${{ secrets.AZURE_RESOURCE_GROUP }} --yes --no-wait
