@@ -13,3 +13,5 @@ This example uses a simple Bicep file to deploy a Storage Account to Azure using
 3. Run the Bicep file locally (optional):
    ```bash
    az deployment group create --resource-group <RESOURCE_GROUP> --template-file main.bicep
+   ```
+4. Use the provided GitHub Actions workflow to deploy via OIDC.
