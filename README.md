@@ -4,8 +4,6 @@ Secure your Azure deployments from GitHub Actions without storing long-lived sec
 
 OpenID Connect (OIDC) authentication is a modern and secure way to deploy to Azure from GitHub Actions without storing long-lived secrets. This repository demonstrates how to set up and use OIDC for secure Azure deployments.
 
-This repository demonstrates how to set up and use OIDC authentication for secure Azure deployments via GitHub Actions.
-
 ## Features
 
 - 🔐 **No Secrets Required**: Authenticate without storing sensitive credentials.
