@@ -12,7 +12,7 @@ OpenID Connect (OIDC) authentication is a modern and secure way to deploy to Azu
 
 ## 📘 Documentation
 
-- [Overview of OIDC](docs/overview-oidc.md.md)
+- [Overview of OIDC](docs/overview-oidc.md)
 - [Setting Up OIDC in Azure](docs/setup-azure.md)
 - [GitHub Workflow Example](.github/workflows/deploy.yml)
 
